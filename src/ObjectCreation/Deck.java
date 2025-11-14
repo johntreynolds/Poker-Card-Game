@@ -6,6 +6,9 @@ import java.util.Collections;
 public class Deck
 	{
 	static ArrayList<Card> deck = new ArrayList<Card>();
+	static ArrayList<Card> player1 = new ArrayList<Card>();
+	static ArrayList<Card> player2 = new ArrayList<Card>();
+	static ArrayList<Card> community = new ArrayList<Card>();
 	
 	public static void fillDeck()
 		{

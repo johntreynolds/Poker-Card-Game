@@ -5,9 +5,6 @@ import ObjectCreation.Card;
 
 public class GameProcesses
 	{
-		static ArrayList<Card> player1 = new ArrayList<Card>();
-		static ArrayList<Card> player2 = new ArrayList<Card>();
-		static ArrayList<Card> community = new ArrayList<Card>();
 
 		// Psuedo Code
 
@@ -16,6 +13,7 @@ public class GameProcesses
 		public static void gameRules()
 			{
 				System.out.println("Welcome to Texas Hold'em Poker!");
+				System.out.println("#NOTE# We are playing two player Texas Hold'em");
 				System.out.println("--------------------------------------------------");
 				System.out.println("1. Each player is dealt two private cards (called 'hole cards').");
 				System.out.println("2. Five community cards are dealt face-up on the table.");
@@ -74,14 +72,18 @@ public class GameProcesses
 				int numberOfPlayers = userIntInput.nextInt();
 				if (numberOfPlayers >= 2 && numberOfPlayers <= 4)
 					{
-						
+
 						return numberOfPlayers;
 					}
-				
 
 				numberOfPlayers();
 				return -1;
 
+			}
+
+		public static void dealCards()
+			{
+				
 			}
 
 		// PREFLOP
