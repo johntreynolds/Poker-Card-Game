@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import ObjectCreation.Card;
+import ObjectCreation.Deck;
 
 public class GameProcesses
 	{
@@ -83,7 +84,13 @@ public class GameProcesses
 
 		public static void dealCards()
 			{
-				
+				for (int i = 0; i <= 2; i++)
+					{
+						Deck.player1.add(Deck.deck.get(0));
+						Deck.deck.remove(0);
+						Deck.player2.add(Deck.deck.get(0));
+						Deck.deck.remove(0);
+					}
 			}
 
 		// PREFLOP
