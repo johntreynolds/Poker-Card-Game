@@ -82,7 +82,7 @@ public class GameProcesses
 
 			}
 
-		public static void dealCards()
+		public static void dealCards4Player()
 			{
 				for (int i = 0; i <= 2; i++)
 					{
@@ -90,9 +90,84 @@ public class GameProcesses
 						Deck.deck.remove(0);
 						Deck.player2.add(Deck.deck.get(0));
 						Deck.deck.remove(0);
+						Deck.player3.add(Deck.deck.get(0));
+						Deck.deck.remove(0);
+						Deck.player4.add(Deck.deck.get(0));
+						Deck.deck.remove(0);
 					}
 			}
 
+		public static void printPlayerCards()
+			{
+				// Player 1
+				System.out.println("Player 1 has...");
+				System.out.println(Deck.player1.get(0).getValue() + " of " + Deck.player1.get(0).getSuit());
+				System.out.println(Deck.player1.get(1).getValue() + " of " + Deck.player1.get(1).getSuit());
+
+				System.out.println("");
+
+				// Player 2
+				System.out.println("Player 2 has...");
+				System.out.println(Deck.player2.get(0).getValue() + " of " + Deck.player2.get(0).getSuit());
+				System.out.println(Deck.player2.get(1).getValue() + " of " + Deck.player2.get(1).getSuit());
+
+				System.out.println("");
+
+				// Player 3
+				System.out.println("Player 3 has...");
+				System.out.println(Deck.player3.get(0).getValue() + " of " + Deck.player3.get(0).getSuit());
+				System.out.println(Deck.player3.get(1).getValue() + " of " + Deck.player3.get(1).getSuit());
+
+				System.out.println("");
+
+				// Player 4
+				System.out.println("Player 4 has...");
+				System.out.println(Deck.player4.get(0).getValue() + " of " + Deck.player4.get(0).getSuit());
+				System.out.println(Deck.player4.get(1).getValue() + " of " + Deck.player4.get(1).getSuit());
+			}
+
+		public static void flop()
+			{
+				for (int i = 0; i < 3; i++)
+					{
+						Deck.community.add(Deck.deck.get(0));
+						Deck.deck.remove(0);
+					}
+				System.out.println("The community cards are...");
+				System.out.println(Deck.community.get(0).getValue() + " of " + Deck.community.get(0).getSuit());
+				System.out.println(Deck.community.get(1).getValue() + " of " + Deck.community.get(1).getSuit());
+				System.out.println(Deck.community.get(2).getValue() + " of " + Deck.community.get(2).getSuit());
+			}
+
+		public static void turn()
+			{
+				Deck.community.add(Deck.deck.get(0));
+				Deck.deck.remove(0);
+
+				System.out.println("The community cards are...");
+				System.out.println(Deck.community.get(0).getValue() + " of " + Deck.community.get(0).getSuit());
+				System.out.println(Deck.community.get(1).getValue() + " of " + Deck.community.get(1).getSuit());
+				System.out.println(Deck.community.get(2).getValue() + " of " + Deck.community.get(2).getSuit());
+				System.out.println(Deck.community.get(3).getValue() + " of " + Deck.community.get(3).getSuit());
+			}
+
+		public static void river()
+			{
+				Deck.community.add(Deck.deck.get(0));
+				Deck.deck.remove(0);
+
+				System.out.println("The community cards are...");
+				System.out.println(Deck.community.get(0).getValue() + " of " + Deck.community.get(0).getSuit());
+				System.out.println(Deck.community.get(1).getValue() + " of " + Deck.community.get(1).getSuit());
+				System.out.println(Deck.community.get(2).getValue() + " of " + Deck.community.get(2).getSuit());
+				System.out.println(Deck.community.get(3).getValue() + " of " + Deck.community.get(3).getSuit());
+				System.out.println(Deck.community.get(4).getValue() + " of " + Deck.community.get(4).getSuit());
+			}
+
+		public static void makeBlinds()
+			{
+
+			}
 		// PREFLOP
 		// Set blind
 		// Shuffle deck
