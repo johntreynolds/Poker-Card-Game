@@ -11,80 +11,79 @@ public class GameProcesses
 
 		// INTRO
 
+		// Game Process
 		public static void gameRules()
 			{
-				System.out.println("Welcome to Texas Hold'em Poker!");
-				System.out.println("#NOTE# We are playing two player Texas Hold'em");
-				System.out.println("--------------------------------------------------");
-				System.out.println("1. Each player is dealt two private cards (called 'hole cards').");
-				System.out.println("2. Five community cards are dealt face-up on the table.");
+
+				System.out.println("CASINO POKER RULESET");
+				System.out.println("====================");
+				System.out.println();
+
+				System.out.println("1. Objective");
+				System.out.println("   - Form the best 5-card poker hand or win by making all opponents fold.");
+				System.out.println();
+
+				System.out.println("2. Hand Rankings (Highest to Lowest)");
+				System.out.println("   1) Royal Flush");
+				System.out.println("   2) Straight Flush");
+				System.out.println("   3) Four of a Kind");
+				System.out.println("   4) Full House");
+				System.out.println("   5) Flush");
+				System.out.println("   6) Straight");
+				System.out.println("   7) Three of a Kind");
+				System.out.println("   8) Two Pair");
+				System.out.println("   9) One Pair");
+				System.out.println("   10) High Card");
+				System.out.println();
+
+				System.out.println("3. Game Elements");
+				System.out.println("   - Standard 52-card deck.");
+				System.out.println("   - Dealer button rotates clockwise each hand.");
+				System.out.println("   - Small Blind (SB) and Big Blind (BB) are posted before cards are dealt.");
+				System.out.println();
+
+				System.out.println("4. Dealing");
+				System.out.println("   - Each player receives 2 private cards (\"hole cards\").");
+				System.out.println("   - Five community cards are dealt in stages:");
+				System.out.println("       * Flop: 3 cards");
+				System.out.println("       * Turn: 1 card");
+				System.out.println("       * River: 1 card");
+				System.out.println();
+
+				System.out.println("5. Betting Rounds");
+				System.out.println("   a) Pre-Flop: begins with the first player left of the Big Blind.");
+				System.out.println("   b) Flop: begins left of the dealer.");
+				System.out.println("   c) Turn: same order as the Flop.");
+				System.out.println("   d) River: same order as the Flop.");
+				System.out.println("   - Actions: Check, Bet, Call, Raise, Fold.");
+				System.out.println("   - Betting continues until all players match the wager or fold.");
+				System.out.println();
+
+				System.out.println("6. Showdown");
 				System.out.println(
-						"3. Players use any combination of their two hole cards and the five community cards to make the best five-card hand.");
+						"   - If multiple players remain after the final betting round, all reveal their hands.");
+				System.out.println("   - Best 5-card hand wins the pot.");
+				System.out.println("   - Ties split the pot evenly.");
 				System.out.println();
-				System.out.println("The game consists of four betting rounds:");
-				System.out.println("--------------------------------------------------");
-				System.out
-						.println("1. Pre-Flop: After getting hole cards, players bet starting left of the big blind.");
-				System.out.println(
-						"2. The Flop: Three community cards are dealt face up. Another round of betting begins.");
-				System.out.println("3. The Turn: A fourth community card is dealt. Another betting round follows.");
-				System.out.println(
-						"4. The River: A fifth and final community card is dealt. The last betting round takes place.");
-				System.out.println();
-				System.out.println(
-						"After the final betting round, remaining players reveal their cards in a 'showdown'.");
-				System.out.println("The player with the best five-card poker hand wins the pot.");
-				System.out.println();
-				System.out.println("Poker hand rankings from highest to lowest:");
-				System.out.println("--------------------------------------------------");
-				System.out.println("1. Royal Flush - A, K, Q, J, 10 all of the same suit");
-				System.out.println("2. Straight Flush - Five cards in sequence, all of the same suit");
-				System.out.println("3. Four of a Kind - Four cards of the same rank");
-				System.out.println("4. Full House - Three of a kind plus a pair");
-				System.out.println("5. Flush - Five cards of the same suit, any order");
-				System.out.println("6. Straight - Five cards in sequence of mixed suits");
-				System.out.println("7. Three of a Kind - Three cards of the same rank");
-				System.out.println("8. Two Pair - Two different pairs");
-				System.out.println("9. One Pair - Two cards of the same rank");
-				System.out.println("10. High Card - Highest single card when no other hand is made");
-				System.out.println();
-				System.out.println("Blinds and Betting:");
-				System.out.println("--------------------------------------------------");
-				System.out.println("- The player to the dealer's left posts the small blind.");
-				System.out.println("- The next player posts the big blind (usually double the small blind).");
-				System.out.println("- Betting proceeds clockwise from the big blind.");
-				System.out.println("- Players can fold, call, or raise during their turn.");
-				System.out.println();
-				System.out.println("Winning the Pot:");
-				System.out.println("--------------------------------------------------");
-				System.out.println(
-						"- A player can win by having the best hand at showdown, or by making everyone else fold before showdown.");
-				System.out.println();
-				System.out.println("Good luck and have fun playing Texas Hold'em!");
-				System.out.println("");
+
+				System.out.println("7. Additional Rules");
+				System.out.println("   - Cards must remain visible above the table.");
+				System.out.println("   - Misdeals result in a redeal before betting occurs.");
+				System.out.println("   - Out-of-turn actions may be corrected and action may be reopened.");
+
+				System.out.println("The blinds are setup at $1/$3");
 
 			}
 
-		public static int numberOfPlayers()
+		public static void fuckassGameRules()
 			{
-				System.out.println("How many players are in this game?");
-				System.out.println("The number must 2<=x<=4");
-				Scanner userIntInput = new Scanner(System.in);
-				int numberOfPlayers = userIntInput.nextInt();
-				if (numberOfPlayers >= 2 && numberOfPlayers <= 4)
-					{
-
-						return numberOfPlayers;
-					}
-
-				numberOfPlayers();
-				return -1;
-
+				System.out.println("Because programming the entirety of poker is too much for my little brain, I'm just going to tell you what hand each player has");
+				System.out.println("So sue me");
 			}
 
 		public static void dealCards4Player()
 			{
-				for (int i = 0; i <= 2; i++)
+				for (int i = 0; i <= 1; i++)
 					{
 						Deck.player1.add(Deck.deck.get(0));
 						Deck.deck.remove(0);
@@ -101,29 +100,50 @@ public class GameProcesses
 			{
 				// Player 1
 				System.out.println("Player 1 has...");
-				System.out.println(Deck.player1.get(0).getValue() + " of " + Deck.player1.get(0).getSuit());
-				System.out.println(Deck.player1.get(1).getValue() + " of " + Deck.player1.get(1).getSuit());
+				for (int i = 0; i < Deck.player1.size(); i++)
+					{
+						System.out.println(Deck.player1.get(i).getValue() + " of " + Deck.player1.get(i).getSuit());
+					}
 
 				System.out.println("");
 
 				// Player 2
 				System.out.println("Player 2 has...");
-				System.out.println(Deck.player2.get(0).getValue() + " of " + Deck.player2.get(0).getSuit());
-				System.out.println(Deck.player2.get(1).getValue() + " of " + Deck.player2.get(1).getSuit());
+				for (int i = 0; i < Deck.player2.size(); i++)
+					{
+						System.out.println(Deck.player2.get(i).getValue() + " of " + Deck.player2.get(i).getSuit());
+					}
 
 				System.out.println("");
 
 				// Player 3
 				System.out.println("Player 3 has...");
-				System.out.println(Deck.player3.get(0).getValue() + " of " + Deck.player3.get(0).getSuit());
-				System.out.println(Deck.player3.get(1).getValue() + " of " + Deck.player3.get(1).getSuit());
+				for (int i = 0; i < Deck.player3.size(); i++)
+					{
+						System.out.println(Deck.player3.get(i).getValue() + " of " + Deck.player3.get(i).getSuit());
+					}
 
 				System.out.println("");
 
 				// Player 4
 				System.out.println("Player 4 has...");
-				System.out.println(Deck.player4.get(0).getValue() + " of " + Deck.player4.get(0).getSuit());
-				System.out.println(Deck.player4.get(1).getValue() + " of " + Deck.player4.get(1).getSuit());
+				for (int i = 0; i < Deck.player4.size(); i++)
+					{
+						System.out.println(Deck.player4.get(i).getValue() + " of " + Deck.player4.get(i).getSuit());
+					}
+
+			}
+
+		public static void combineHandsAndCommunity()
+			{
+				for (int i = 0; i < Deck.community.size(); i++)
+					{
+						Deck.player1.add(Deck.community.get(i));
+						Deck.player2.add(Deck.community.get(i));
+						Deck.player3.add(Deck.community.get(i));
+						Deck.player4.add(Deck.community.get(i));
+					}
+
 			}
 
 		public static void flop()
@@ -164,10 +184,18 @@ public class GameProcesses
 				System.out.println(Deck.community.get(4).getValue() + " of " + Deck.community.get(4).getSuit());
 			}
 
-		public static void makeBlinds()
+		// Still working
+
+		public static void preflopBetting()
 			{
 
 			}
+
+		public static void askForDecision()
+			{
+
+			}
+
 		// PREFLOP
 		// Set blind
 		// Shuffle deck

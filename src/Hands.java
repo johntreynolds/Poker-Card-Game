@@ -4,53 +4,53 @@ import ObjectCreation.Card;
 
 public class Hands
 	{
-		public static int royalFlush(ArrayList<Card> deck)
+		public static void royalFlush()
 			{
-				return 1;
+				
 			}
 
-		public static int straightFlush(ArrayList<Card> deck)
+		public static void straightFlush()
 			{
-				return 2;
+				
 			}
 
-		public static int fourOfAKind(ArrayList<Card> deck)
+		public static void fourOfAKind()
 			{
-				return 3;
+				
 			}
 
-		public static int fullHouse(ArrayList<Card> deck)
+		public static void fullHouse()
 			{
-				return 4;
+				
 			}
 
-		public static int flush(ArrayList<Card> deck)
+		public static void flush()
 			{
-				return 5;
+				
 			}
 
-		public static int straight(ArrayList<Card> deck)
+		public static void straight()
 			{
-				return 6;
+				
 			}
 
-		public static int threeOfAKind(ArrayList<Card> deck)
+		public static void threeOfAKind()
 			{
-				return 7;
+			
 			}
 
-		public static int twoPair(ArrayList<Card> deck)
+		public static void twoPair()
 			{
-				return 8;
+				
 			}
 		
-		public static int onePair(ArrayList<Card> deck)
+		public static void onePair()
 			{
-				return 9;
+				
 			}
 		
-		public static int highCard(ArrayList<Card> deck)
+		public static void highCard()
 			{
-				return 10;
+				
 			}
 	}
