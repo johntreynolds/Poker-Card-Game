@@ -1,8 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
-
-import ObjectCreation.Card;
-import ObjectCreation.Deck;
 
 public class GameProcesses
 	{
@@ -77,7 +75,8 @@ public class GameProcesses
 
 		public static void fuckassGameRules()
 			{
-				System.out.println("Because programming the entirety of poker is too much for my little brain, I'm just going to tell you what hand each player has");
+				System.out.println(
+						"Because programming the entirety of poker is too much for my little brain, I'm just going to tell you what hand each player has");
 				System.out.println("So sue me");
 			}
 
@@ -146,6 +145,14 @@ public class GameProcesses
 
 			}
 
+		public static void printFullHand()
+			{
+				for (int i = 0; i < Deck.player1.size(); i++)
+					{
+						System.out.println(Deck.player1.get(i).getValue() + " of " + Deck.player1.get(i).getSuit());
+					}
+			}
+
 		public static void flop()
 			{
 				for (int i = 0; i < 3; i++)
@@ -153,10 +160,16 @@ public class GameProcesses
 						Deck.community.add(Deck.deck.get(0));
 						Deck.deck.remove(0);
 					}
-				System.out.println("The community cards are...");
-				System.out.println(Deck.community.get(0).getValue() + " of " + Deck.community.get(0).getSuit());
-				System.out.println(Deck.community.get(1).getValue() + " of " + Deck.community.get(1).getSuit());
-				System.out.println(Deck.community.get(2).getValue() + " of " + Deck.community.get(2).getSuit());
+
+				/*
+				 * System.out.println("The community cards are...");
+				 * System.out.println(Deck.community.get(0).getValue() + " of " +
+				 * Deck.community.get(0).getSuit());
+				 * System.out.println(Deck.community.get(1).getValue() + " of " +
+				 * Deck.community.get(1).getSuit());
+				 * System.out.println(Deck.community.get(2).getValue() + " of " +
+				 * Deck.community.get(2).getSuit());
+				 **/
 			}
 
 		public static void turn()
@@ -164,11 +177,17 @@ public class GameProcesses
 				Deck.community.add(Deck.deck.get(0));
 				Deck.deck.remove(0);
 
-				System.out.println("The community cards are...");
-				System.out.println(Deck.community.get(0).getValue() + " of " + Deck.community.get(0).getSuit());
-				System.out.println(Deck.community.get(1).getValue() + " of " + Deck.community.get(1).getSuit());
-				System.out.println(Deck.community.get(2).getValue() + " of " + Deck.community.get(2).getSuit());
-				System.out.println(Deck.community.get(3).getValue() + " of " + Deck.community.get(3).getSuit());
+				/*
+				 * System.out.println("The community cards are...");
+				 * System.out.println(Deck.community.get(0).getValue() + " of " +
+				 * Deck.community.get(0).getSuit());
+				 * System.out.println(Deck.community.get(1).getValue() + " of " +
+				 * Deck.community.get(1).getSuit());
+				 * System.out.println(Deck.community.get(2).getValue() + " of " +
+				 * Deck.community.get(2).getSuit());
+				 * System.out.println(Deck.community.get(3).getValue() + " of " +
+				 * Deck.community.get(3).getSuit());
+				 **/
 			}
 
 		public static void river()
@@ -184,6 +203,25 @@ public class GameProcesses
 				System.out.println(Deck.community.get(4).getValue() + " of " + Deck.community.get(4).getSuit());
 			}
 
+		public static void sortFullHand()
+			{
+				Collections.sort(Deck.player1, new SuitSorting());
+				Collections.sort(Deck.player1, new RankSorting());
+				for (int i = 0; i < Deck.player1.size(); i++)
+					{
+						System.out.println(Deck.player1.get(i).getValue() + " of " + Deck.player1.get(i).getSuit());
+					}
+			}
+
+		public static void checkHand(ArrayList<Card> hand)
+			{
+				if (Hands.royalFlush(hand) == -1)
+					System.out.println("nuh uh");
+				else
+					{
+						System.out.println("Holy shit a royal flush");
+					}
+			}
 		// Still working
 
 		public static void preflopBetting()

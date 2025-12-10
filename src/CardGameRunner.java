@@ -1,5 +1,3 @@
-import ObjectCreation.Deck;
-
 public class CardGameRunner
 	{
 
@@ -18,15 +16,18 @@ public class CardGameRunner
 				speedrunCommunityCards();
 				System.out.println(""); // Space
 				GameProcesses.combineHandsAndCommunity();
+				//GameProcesses.printFullHand();
+				GameProcesses.sortFullHand();
+				GameProcesses.checkHand(Deck.player1);
 
 			}
 
 		public static void speedrunCommunityCards()
 			{
 				GameProcesses.flop();
-				System.out.println(""); // Space
+				//System.out.println(""); // Space
 				GameProcesses.turn();
-				System.out.println(""); // Space
+				//System.out.println(""); // Space
 				GameProcesses.river();
 			}
 
