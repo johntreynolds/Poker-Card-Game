@@ -33,12 +33,12 @@ public class Card
 				this.suit = suit;
 			}
 
-		public int getrank()
+		public int getRank()
 			{
 				return rank;
 			}
 
-		public void setrank(int rank)
+		public void setRank(int rank)
 			{
 				this.rank = rank;
 			}

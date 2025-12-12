@@ -145,11 +145,11 @@ public class GameProcesses
 
 			}
 
-		public static void printFullHand()
+		public static void printFullHand(ArrayList<Card> hand)
 			{
-				for (int i = 0; i < Deck.player1.size(); i++)
+				for (int i = 0; i < hand.size(); i++)
 					{
-						System.out.println(Deck.player1.get(i).getValue() + " of " + Deck.player1.get(i).getSuit());
+						System.out.println(hand.get(i).getValue() + " of " + hand.get(i).getSuit());
 					}
 			}
 
@@ -203,24 +203,22 @@ public class GameProcesses
 				System.out.println(Deck.community.get(4).getValue() + " of " + Deck.community.get(4).getSuit());
 			}
 
-		public static void sortFullHand()
+		public static void sortFullHandRank(ArrayList<Card> hand)
 			{
-				Collections.sort(Deck.player1, new SuitSorting());
-				Collections.sort(Deck.player1, new RankSorting());
-				for (int i = 0; i < Deck.player1.size(); i++)
-					{
-						System.out.println(Deck.player1.get(i).getValue() + " of " + Deck.player1.get(i).getSuit());
-					}
+				Collections.sort(hand, new SuitSorting());
+				Collections.sort(hand, new RankSorting());
+			}
+		
+		public static void sortFullHandSuit(ArrayList<Card> hand)
+			{
+				Collections.sort(hand, new RankSorting());
+				Collections.sort(hand, new SuitSorting());
 			}
 
-		public static void checkHand(ArrayList<Card> hand)
+		public static void checkHand(ArrayList<Card> hand, String handName)
 			{
-				if (Hands.royalFlush(hand) == -1)
-					System.out.println("nuh uh");
-				else
-					{
-						System.out.println("Holy shit a royal flush");
-					}
+				Hands.royalFlush(hand, handName);
+					
 			}
 		// Still working
 

@@ -5,7 +5,7 @@ public class RankSorting implements Comparator<Card>
 
 		public int compare (Card c1, Card c2)
 			{
-				if (c1.getrank() < c2.getrank())
+				if (c1.getRank() < c2.getRank())
 					{
 						return 1;
 					}

@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class CardGameRunner
 	{
 
 		public static void main(String[] args)
 			{
-				//GameProcesses.gameRules();
+				// GameProcesses.gameRules();
 				GameProcesses.fuckassGameRules();
 				System.out.println(""); // Space
 
@@ -16,19 +18,27 @@ public class CardGameRunner
 				speedrunCommunityCards();
 				System.out.println(""); // Space
 				GameProcesses.combineHandsAndCommunity();
-				//GameProcesses.printFullHand();
-				GameProcesses.sortFullHand();
-				GameProcesses.checkHand(Deck.player1);
+				// GameProcesses.printFullHand();
+				testCheckingHands(Deck.player1, "Player 1");
+				//player1
+				//royalFlush
+				//testRoyalFlushDuplicates
 
 			}
 
 		public static void speedrunCommunityCards()
 			{
 				GameProcesses.flop();
-				//System.out.println(""); // Space
+				// System.out.println(""); // Space
 				GameProcesses.turn();
-				//System.out.println(""); // Space
+				// System.out.println(""); // Space
 				GameProcesses.river();
 			}
 
+		public static void testCheckingHands(ArrayList<Card> hand, String handName)
+			{
+				Deck.fillRoyalFlush();
+				Deck.fillTestRoyalFlushDuplicates();
+				GameProcesses.checkHand(hand, "Player 1");
+			}
 	}
